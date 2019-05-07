@@ -2,11 +2,18 @@ package com.motkur.thebigone;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
 @SpringBootApplication
-public class TheBigOneApplication {
+public class TheBigOneApplication extends SpringBootServletInitializer {
 
-    public static void main(String[] args) {
+    @Override
+    protected SpringApplicationBuilder configure (SpringApplicationBuilder applicationBuilder) {
+        return applicationBuilder.sources(TheBigOneApplication.class);
+    }
+
+    public static void main(String[] args) throws Exception {
         SpringApplication.run(TheBigOneApplication.class, args);
     }
 
