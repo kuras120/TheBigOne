@@ -15,7 +15,7 @@ public class Salary {
     @Column(name = "date_end")
     private LocalDate dateEnd;
     @ManyToOne
-    @JoinColumn(name = "user_group_id")
+    @JoinColumn(name = "users_groups_id")
     private UserGroup userFromGroup;
 
     public long getId() {

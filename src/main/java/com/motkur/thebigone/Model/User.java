@@ -14,7 +14,6 @@ public class User {
     private String password;
     @Transient
     private String passwordConfirm;
-    private String salt;
     @Column(name = "created_on")
     private LocalDateTime createdOn;
     @Column(name = "last_login")
@@ -52,14 +51,6 @@ public class User {
 
     public void setPasswordConfirm(String passwordConfirm) {
         this.passwordConfirm = passwordConfirm;
-    }
-
-    public String getSalt() {
-        return salt;
-    }
-
-    public void setSalt(String salt) {
-        this.salt = salt;
     }
 
     public LocalDateTime getCreatedOn() {

@@ -14,7 +14,7 @@ public class History {
     @Column(name = "created_on")
     private LocalDateTime createdOn;
     @ManyToOne
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "users_id")
     private User createdBy;
 
     public long getId() {

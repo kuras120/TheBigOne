@@ -12,6 +12,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 @Controller
 public class UserController {
 
@@ -36,6 +39,8 @@ public class UserController {
             return "registration";
         }
 
+        userForm.setCreatedOn(LocalDateTime.now());
+        userForm.setLastLogin(userForm.getCreatedOn());
         userService.save(userForm);
         securityService.autoLogin(userForm.getLogin(), userForm.getPasswordConfirm());
 
@@ -44,6 +49,10 @@ public class UserController {
 
     @GetMapping("/login")
     public String login(Model model, String error, String logout) {
+        System.out.println("model: " + model);
+        System.out.println("error: " + error);
+        System.out.println("logout: " + logout);
+
         if (error != null) model.addAttribute("error", "Your username and password is invalid.");
         if (logout != null) model.addAttribute("message", "You have been logged out successfully.");
 

@@ -29,9 +29,8 @@ public class DetailsService implements UserDetailsService {
             throw new UsernameNotFoundException(username);
         }
         Set<GrantedAuthority> grantedAuthorities = new HashSet<>();
-        for (Group group: user.getGroups()){
-            grantedAuthorities.add(new SimpleGrantedAuthority(group.getName()));
-        }
+        grantedAuthorities.add(new SimpleGrantedAuthority("USER"));
+
         return new org.springframework.security.core.userdetails.User(user.getLogin(), user.getPassword(), grantedAuthorities);
     }
 }

@@ -3,16 +3,16 @@ package com.motkur.thebigone.Model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "User_Groups")
+@Table(name = "Users_Groups")
 public class UserGroup {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @ManyToOne
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "users_id")
     private User user;
     @ManyToOne
-    @JoinColumn(name = "group_id")
+    @JoinColumn(name = "groups_id")
     private Group group;
 
     public long getId() {
