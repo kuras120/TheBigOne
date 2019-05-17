@@ -69,9 +69,7 @@ public class UserController {
     @GetMapping({"/", "/welcome"})
     public String welcome(Model model) {
         User user = userService.findByUsername("kuras120");
-        for (UserGroup group : user.getGroups()) {
-            System.out.println(group.getGroup().getName());
-        }
+        if (user != null) model.addAttribute("groups", user.getGroups());
         return "welcome";
     }
 }
