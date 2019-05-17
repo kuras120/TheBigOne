@@ -1,9 +1,11 @@
 package com.motkur.thebigone.Web;
 
+import com.motkur.thebigone.Model.UserGroup;
+import com.motkur.thebigone.Service.Interface.IGroupService;
+import com.motkur.thebigone.Service.Interface.ISecurityService;
+import com.motkur.thebigone.Service.Interface.IUserService;
 import com.motkur.thebigone.Validator.UserValidator;
 import com.motkur.thebigone.Model.User;
-import com.motkur.thebigone.Service.SecurityService;
-import com.motkur.thebigone.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,22 +14,26 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Controller
 public class UserController {
+    @Autowired
+    private IUserService userService;
 
     @Autowired
-    private UserService userService;
+    private IGroupService groupService;
+
     @Autowired
-    private SecurityService securityService;
+    private ISecurityService securityService;
+
     @Autowired
     private UserValidator userValidator;
 
     @GetMapping("/registration")
     public String registration(Model model) {
         model.addAttribute("userForm", new User());
+
         return "registration";
     }
 
@@ -42,25 +48,30 @@ public class UserController {
         userForm.setCreatedOn(LocalDateTime.now());
         userForm.setLastLogin(userForm.getCreatedOn());
         userService.save(userForm);
-        securityService.autoLogin(userForm.getLogin(), userForm.getPasswordConfirm());
+        groupService.save(userForm, null, "Test", true);
+
+        securityService.autoLogin(userForm.getUsername(), userForm.getPasswordConfirm());
 
         return "redirect:/welcome";
     }
 
     @GetMapping("/login")
     public String login(Model model, String error, String logout) {
-        System.out.println("model: " + model);
-        System.out.println("error: " + error);
-        System.out.println("logout: " + logout);
+        if (error != null)
+            model.addAttribute("error", "Your username and password is invalid.");
 
-        if (error != null) model.addAttribute("error", "Your username and password is invalid.");
-        if (logout != null) model.addAttribute("message", "You have been logged out successfully.");
+        if (logout != null)
+            model.addAttribute("message", "You have been logged out successfully.");
 
         return "login";
     }
 
     @GetMapping({"/", "/welcome"})
     public String welcome(Model model) {
+        User user = userService.findByUsername("kuras120");
+        for (UserGroup group : user.getGroups()) {
+            System.out.println(group.getGroup().getName());
+        }
         return "welcome";
     }
 }

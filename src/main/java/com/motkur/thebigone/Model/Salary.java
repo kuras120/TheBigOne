@@ -2,6 +2,7 @@ package com.motkur.thebigone.Model;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.Objects;
 
 @Entity
 @Table(name = "Salary")
@@ -15,7 +16,7 @@ public class Salary {
     @Column(name = "date_end")
     private LocalDate dateEnd;
     @ManyToOne
-    @JoinColumn(name = "users_groups_id")
+    @JoinColumn(name = "user_from_group")
     private UserGroup userFromGroup;
 
     public long getId() {

@@ -2,7 +2,7 @@ package com.motkur.thebigone.Model;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
-import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "Users")
@@ -10,7 +10,7 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    private String login;
+    private String username;
     private String password;
     @Transient
     private String passwordConfirm;
@@ -18,8 +18,8 @@ public class User {
     private LocalDateTime createdOn;
     @Column(name = "last_login")
     private LocalDateTime lastLogin;
-    @ManyToMany
-    private List<Group> groups;
+    @OneToMany(mappedBy = "user")
+    private Set<UserGroup> groups;
 
     public long getId() {
         return id;
@@ -29,12 +29,12 @@ public class User {
         this.id = id;
     }
 
-    public String getLogin() {
-        return login;
+    public String getUsername() {
+        return username;
     }
 
-    public void setLogin(String login) {
-        this.login = login;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
@@ -69,11 +69,11 @@ public class User {
         this.lastLogin = lastLogin;
     }
 
-    public List<Group> getGroups() {
+    public Set<UserGroup> getGroups() {
         return groups;
     }
 
-    public void setGroups(List<Group> groups) {
+    public void setGroups(Set<UserGroup> groups) {
         this.groups = groups;
     }
 }

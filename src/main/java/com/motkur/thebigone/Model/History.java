@@ -2,6 +2,7 @@ package com.motkur.thebigone.Model;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.Objects;
 
 @Entity
 @Table(name = "History")
@@ -14,7 +15,7 @@ public class History {
     @Column(name = "created_on")
     private LocalDateTime createdOn;
     @ManyToOne
-    @JoinColumn(name = "users_id")
+    @JoinColumn(name = "created_by")
     private User createdBy;
 
     public long getId() {

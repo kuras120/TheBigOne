@@ -1,8 +1,11 @@
 package com.motkur.thebigone.Model;
 
+import com.motkur.thebigone.Repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+
 import javax.persistence.*;
 import java.time.LocalDateTime;
-import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "Groups")
@@ -14,10 +17,10 @@ public class Group {
     @Column(name = "created_on")
     private LocalDateTime createdOn;
     @ManyToOne
-    @JoinColumn(name = "users_id")
+    @JoinColumn(name = "created_by")
     private User createdBy;
-    @ManyToMany(mappedBy = "groups")
-    private List<User> users;
+    @OneToMany(mappedBy = "group")
+    private Set<UserGroup> users;
 
     public long getId() {
         return id;
@@ -51,11 +54,11 @@ public class Group {
         this.createdBy = createdBy;
     }
 
-    public List<User> getUsers() {
+    public Set<UserGroup> getUsers() {
         return users;
     }
 
-    public void setUsers(List<User> users) {
+    public void setUsers(Set<UserGroup> users) {
         this.users = users;
     }
 }

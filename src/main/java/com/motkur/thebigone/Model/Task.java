@@ -3,6 +3,7 @@ package com.motkur.thebigone.Model;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.util.Objects;
 
 @Entity
 @Table(name = "Tasks")
@@ -17,7 +18,7 @@ public class Task {
     @Column(name = "created_on")
     private LocalDateTime createdOn;
     @ManyToOne
-    @JoinColumn(name = "users_groups_id")
+    @JoinColumn(name = "user_from_group")
     private UserGroup userFromGroup;
 
     public long getId() {
