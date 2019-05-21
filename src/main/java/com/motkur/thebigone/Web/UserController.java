@@ -1,6 +1,5 @@
 package com.motkur.thebigone.Web;
 
-import com.motkur.thebigone.Model.UserGroup;
 import com.motkur.thebigone.Service.Interface.IGroupService;
 import com.motkur.thebigone.Service.Interface.ISecurityService;
 import com.motkur.thebigone.Service.Interface.IUserService;
@@ -34,7 +33,7 @@ public class UserController {
     public String registration(Model model) {
         model.addAttribute("userForm", new User());
 
-        return "registration";
+        return "jsp/registration";
     }
 
     @PostMapping("/registration")
@@ -42,7 +41,7 @@ public class UserController {
         userValidator.validate(userForm, bindingResult);
 
         if (bindingResult.hasErrors()) {
-            return "registration";
+            return "jsp/registration";
         }
 
         userForm.setCreatedOn(LocalDateTime.now());
@@ -63,13 +62,13 @@ public class UserController {
         if (logout != null)
             model.addAttribute("message", "You have been logged out successfully.");
 
-        return "login";
+        return "jsp/login";
     }
 
     @GetMapping({"/", "/welcome"})
     public String welcome(Model model) {
         User user = userService.findByUsername("kuras120");
         if (user != null) model.addAttribute("groups", user.getGroups());
-        return "welcome";
+        return "jsp/welcome";
     }
 }
