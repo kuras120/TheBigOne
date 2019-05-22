@@ -71,4 +71,11 @@ public class UserController {
         if (user != null) model.addAttribute("groups", user.getGroups());
         return "jsp/welcome";
     }
+
+    @GetMapping("/home")
+    public String home(Model model) {
+
+        return "jsp/home";
+    }
+
 }
