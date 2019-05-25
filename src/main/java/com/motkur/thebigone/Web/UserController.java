@@ -47,7 +47,8 @@ public class UserController {
         userForm.setCreatedOn(LocalDateTime.now());
         userForm.setLastLogin(userForm.getCreatedOn());
         userService.save(userForm);
-        groupService.save(userForm, null, "Test", true);
+        groupService.save(userForm, null, "TestGruppe", true);
+        groupService.save(userForm, null, "MeinFührer", true);
 
         securityService.autoLogin(userForm.getUsername(), userForm.getPasswordConfirm());
 
@@ -68,7 +69,10 @@ public class UserController {
     @GetMapping({"/", "/welcome"})
     public String welcome(Model model) {
         User user = userService.findByUsername("kuras120");
-        if (user != null) model.addAttribute("groups", user.getGroups());
+        if (user != null) {
+            model.addAttribute("groups", user.getGroups());
+            model.addAttribute("userCreatedOn", user.getCreatedOn().toLocalDate());
+        }
         return "jsp/welcome";
     }
 }
