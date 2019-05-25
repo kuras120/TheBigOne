@@ -68,11 +68,14 @@ public class UserController {
 
     @GetMapping({"/", "/welcome"})
     public String welcome(Model model) {
-        User user = userService.findByUsername("kuras120");
-        if (user != null) {
+        String principalName = securityService.findLoggedInUsername();
+        System.out.println(principalName);
+        if (principalName != null) {
+            User user = userService.findByUsername(principalName);
             model.addAttribute("groups", user.getGroups());
             model.addAttribute("userCreatedOn", user.getCreatedOn().toLocalDate());
         }
+
         return "welcome";
     }
 
