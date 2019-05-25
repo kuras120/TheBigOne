@@ -16,28 +16,6 @@
 </head>
 
 <body>
-
-<!--
-<div class="container">
-    <form method="POST" action="${contextPath}/login" class="form-signin">
-        <h2 class="form-heading">Log in</h2>
-
-        <div class="form-group ${error != null ? 'has-error' : ''}">
-            <span>${message}</span>
-            <input name="username" type="text" class="form-control" placeholder="Username"
-                   autofocus="true"/>
-            <input name="password" type="password" class="form-control" placeholder="Password"/>
-            <span>${error}</span>
-            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Log In</button>
-            <h4 class="text-center"><a href="${contextPath}/registration">Create an account</a></h4>
-        </div>
-    </form>
-</div>
--->
-
-
 <div class="container" id="papaj">
     <div class="d-flex justify-content-center h-100">
         <div class="card">
@@ -45,28 +23,32 @@
                 <h3>Sign In</h3>
             </div>
             <div class="card-body">
-                <form>
+                <form method="POST" action="${contextPath}/login">
+                    <label for="username">${message}</label>
                     <div class="input-group form-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-user"></i></span>
                         </div>
-                        <input type="text" class="form-control" placeholder="username">
+                        <input id="username" name="username" type="text" class="form-control" placeholder="Username" autofocus="true"/>
 
                     </div>
                     <div class="input-group form-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-key"></i></span>
                         </div>
-                        <input type="password" class="form-control" placeholder="password">
+                        <input id="password" name="password" type="password" class="form-control" placeholder="Password"/>
+
                     </div>
+                    <label for="password">${error}</label>
                     <div class="form-group">
+                        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                         <input type="submit" value="Login" class="btn float-right login_btn">
                     </div>
                 </form>
             </div>
             <div class="card-footer">
                 <div class="d-flex justify-content-center links">
-                    Don't have an account?<a href="registration">Sign Up</a>
+                    Don't have an account?<a href="${contextPath}/registration">Sign Up</a>
                 </div>
             </div>
         </div>

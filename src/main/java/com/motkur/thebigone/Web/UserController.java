@@ -33,7 +33,7 @@ public class UserController {
     public String registration(Model model) {
         model.addAttribute("userForm", new User());
 
-        return "jsp/registration";
+        return "registration";
     }
 
     @PostMapping("/registration")
@@ -41,7 +41,7 @@ public class UserController {
         userValidator.validate(userForm, bindingResult);
 
         if (bindingResult.hasErrors()) {
-            return "jsp/registration";
+            return "registration";
         }
 
         userForm.setCreatedOn(LocalDateTime.now());
@@ -62,20 +62,20 @@ public class UserController {
         if (logout != null)
             model.addAttribute("message", "You have been logged out successfully.");
 
-        return "jsp/login";
+        return "login";
     }
 
     @GetMapping({"/", "/welcome"})
     public String welcome(Model model) {
         User user = userService.findByUsername("kuras120");
         if (user != null) model.addAttribute("groups", user.getGroups());
-        return "jsp/welcome";
+        return "welcome";
     }
 
     @GetMapping("/home")
     public String home(Model model) {
 
-        return "jsp/home";
+        return "home";
     }
 
 }

@@ -54,7 +54,7 @@
         <div class="row align-items-center">
             <div class="col-lg-6 order-lg-2">
                 <div class="p-5">
-                    <img class="img-fluid" src="../resources/img/edit-list-view.png" alt="">
+                    <img class="img-fluid" src="resources/img/edit-list-view.png" alt="">
                 </div>
             </div>
             <div class="col-lg-6 order-lg-1">
@@ -72,7 +72,7 @@
         <div class="row align-items-center">
             <div class="col-lg-6">
                 <div class="p-5">
-                    <img class="img-fluid" src="../resources/img/graph_arrow.png" alt="">
+                    <img class="img-fluid" src="resources/img/graph_arrow.png" alt="">
                 </div>
             </div>
             <div class="col-lg-6">
