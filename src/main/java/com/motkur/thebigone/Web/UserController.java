@@ -66,7 +66,7 @@ public class UserController {
         return "login";
     }
 
-    @GetMapping({"/welcome"})
+    @GetMapping("/welcome")
     public String welcome(Model model) {
         String principalName = securityService.findLoggedInUsername();
         System.out.println(principalName);
