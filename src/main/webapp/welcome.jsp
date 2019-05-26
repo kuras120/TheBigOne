@@ -62,14 +62,14 @@
 
                         <div class="col-sm-6 col-md-5 offset-md-1">
                             <figure>
-                                <a href="#"><img src="resources/img/my_groups.png" alt="MY LISTS"></a>
+                                <a href="${contextPath}/lists"><img src="resources/img/my_groups.png" alt="MY LISTS"></a>
                                 <figcaption>MY LISTS</figcaption>
                             </figure>
                         </div>
 
                         <div class="col-sm-6 col-md-5">
                             <figure>
-                                <a href="settings.jsp"><img src="resources/img/settings_account.png"alt="ACCOUNT SETTINGS"></a>
+                                <a href="${contextPath}/settings"><img src="resources/img/settings_account.png" alt="ACCOUNT SETTINGS"></a>
                                 <figcaption>ACCOUNT SETTINGS</figcaption>
                             </figure>
                         </div>

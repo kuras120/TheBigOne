@@ -85,4 +85,16 @@ public class UserController {
         return "home";
     }
 
+    @GetMapping("/settings")
+    public String settings(Model model) {
+
+        return "settings";
+    }
+
+    @GetMapping("/lists")
+    public String lists(Model model) {
+
+        return "lists";
+    }
+
 }
