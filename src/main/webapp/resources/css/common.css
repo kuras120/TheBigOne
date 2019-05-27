@@ -43,7 +43,7 @@ body
     font-size: 0.8rem;
     font-weight: 700;
     letter-spacing: 0.1rem;
-    padding-top: 0.5rem;
+    padding-top: 6px;
     display: block;
     padding-bottom: 0.5rem;
     color: rgba(0,0,0,.5);
@@ -158,3 +158,41 @@ body
     color: black;
     background-color: white;
 }
+#Data
+{
+    padding-top: 6rem;
+    padding-left: 12rem;
+    clear: both;
+}
+.box-header
+{
+    padding-bottom: 3rem;
+}
+.box-bottom
+{
+    padding-top: 5rem;
+}
+
+.settings_buton img
+{
+    width: 100%;
+    height: auto;
+    padding-top: 2rem;
+}
+.settings_buton figure figcaption
+{
+    text-align: center;
+}
+.settings_buton figcaption
+{
+    font-family: 'Bad Script';
+    font-size: 0.5rem;
+    font-weight: 700;
+    margin-top: 5px;
+}
+.delete_account
+{
+    padding-top: 1rem;
+    padding-top: 1rem;
+}
+.modal
