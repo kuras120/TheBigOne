@@ -11,8 +11,8 @@ html
 body
 {
     height: 100%;
-    background-image: url("../img/background.jpg");
-    background-repeat: no-repeat;
+    background-image: url("../img/background.jpg"), url("../img/background2.jpg");
+    background-repeat: no-repeat, repeat;
     background-size: cover;
     font-family: Lato
 }
@@ -21,40 +21,88 @@ body
 {
     height: 100%;
     align-content: center;
+
+
 }
+
+
+/**********FOOTER**********/
+
 .bg-black
 {
     background-color: #000;
-    opacity: 0.7;
+    opacity: 0.8;
 }
 
 /**********NAVBAR**********/
+.navbar{
+    background-color: #6fa3f4;
+}
 .navbar-custom .navbar-nav .nav-item .nav-link
 {
     text-transform: uppercase;
     font-size: 0.8rem;
     font-weight: 700;
     letter-spacing: 0.1rem;
-;
-
 }
+
+.navbar-brand
+{
+    font-size: 1.5rem;
+}
+
 .logout_btn
 {
     font-size: 0.8rem;
     font-weight: 700;
     letter-spacing: 0.1rem;
-    padding-top: 0.5rem;
+    padding-top: 6px;
+    display: block;
+    padding-bottom: 0.5rem;
+    color: rgba(0,0,0,.5);
+}
+.logout_btn2
+{
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+    padding-top: 6px;
     display: block;
     padding-bottom: 0.5rem;
     color: rgba(0,0,0,.5);
 }
 
+/**********HOME PAGE**********/
 
 #Intro
 {
     padding-top: 7rem;
     padding-bottom: 7rem;
 }
+#About
+{
+    padding-bottom: 5rem;
+}
+
+
+#About img
+{
+    width: 75%;
+}
+.Functions
+{
+    padding-top: 150px;
+    text-align: center;
+    padding-bottom: 100px;
+}
+.Functions figcaption
+{
+    margin-top: 15px;
+    font-weight: 500;
+    font-size: 1.3rem;
+}
+
+
 
 /**********LOGIN**********/
 .card
@@ -151,10 +199,52 @@ body
 }
 .modal_btn
 {
-    background-color: rgba(72,135,232,0.9);
+    background-color: rgba(98,155,243,0.9);
 }
 .modal_btn:hover
 {
     color: black;
     background-color: white;
+
 }
+
+/**********SETTINGS**********/
+
+#Data
+{
+    padding-top: 6rem;
+    padding-left: 12rem;
+    clear: both;
+}
+.box-header
+{
+    padding-bottom: 3rem;
+}
+.box-bottom
+{
+    padding-top: 5rem;
+}
+
+.settings_buton img
+{
+    width: 100%;
+    height: auto;
+    padding-top: 2rem;
+}
+.settings_buton figure figcaption
+{
+    text-align: center;
+}
+.settings_buton figcaption
+{
+    font-family: 'Bad Script';
+    font-size: 0.5rem;
+    font-weight: 700;
+    margin-top: 5px;
+}
+.delete_account
+{
+    padding-top: 1rem;
+    padding-top: 1rem;
+}
+
