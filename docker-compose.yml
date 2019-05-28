@@ -1,0 +1,23 @@
+version: '3'
+services:
+  web:
+    build: .
+    ports:
+      - 8080:8080
+    depends_on:
+      - db
+  db:
+    container_name: bigone_db
+    image: postgres:10.8
+    volumes:
+      - bigone_db:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=javaee
+      - POSTGRES_USER=bigone
+      - POSTGRES_DB=bigone
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    ports:
+      - 5432:5432
+
+volumes:
+  bigone_db: {}
