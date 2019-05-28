@@ -29,65 +29,15 @@ public class UserController {
     @Autowired
     private UserValidator userValidator;
 
-    @GetMapping("/registration")
-    public String registration(Model model) {
-        model.addAttribute("userForm", new User());
-
-        return "registration";
-    }
-
-    @PostMapping("/registration")
-    public String registration(@ModelAttribute("userForm") User userForm, BindingResult bindingResult) {
-        userValidator.validate(userForm, bindingResult);
-
-        if (bindingResult.hasErrors()) {
-            return "registration";
-        }
-
-        userForm.setCreatedOn(LocalDateTime.now());
-        userForm.setLastLogin(userForm.getCreatedOn());
-        userService.save(userForm);
-        groupService.save(userForm, null, "TestGruppe", true);
-        groupService.save(userForm, null, "MeinFührer", true);
-
-        securityService.autoLogin(userForm.getUsername(), userForm.getPasswordConfirm());
-
-        return "redirect:/welcome";
-    }
-
-    @GetMapping("/login")
-    public String login(Model model, String error, String logout) {
-        if (error != null)
-            model.addAttribute("error", "Your username and password is invalid.");
-
-        if (logout != null)
-            model.addAttribute("message", "You have been logged out successfully.");
-
-        return "login";
-    }
-
-    @GetMapping("/welcome")
-    public String welcome(Model model) {
-        String principalName = securityService.findLoggedInUsername();
-        System.out.println(principalName);
-        if (principalName != null) {
-            User user = userService.findByUsername(principalName);
-            model.addAttribute("groups", user.getGroups());
-            model.addAttribute("userCreatedOn", user.getCreatedOn().toLocalDate());
-        }
-
-        return "welcome";
-    }
-
-    @GetMapping({"/", "/home"})
-    public String home(Model model) {
-
-        return "home";
-    }
 
     @GetMapping("/settings")
     public String settings(Model model) {
+        User currentUser = userService.findByUsername(securityService.findLoggedInUsername());
+        return "settings";
+    }
 
+    @PostMapping("/settings")
+    public String settings(@ModelAttribute("userForm") User userForm) {
         return "settings";
     }
 
