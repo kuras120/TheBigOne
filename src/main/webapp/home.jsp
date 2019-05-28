@@ -33,7 +33,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="#Benefits">Functions</a>
+                        <a class="nav-link js-scroll-trigger" href="#Functions">Functions</a>
                     </li>
 
                     <li class="nav-item">
@@ -49,6 +49,8 @@
     </nav>
 
 <!-----------------------BODY------------------------>
+
+<!-----------------------INTRO------------------------>
     <section id="Intro">
         <div class="container">
             <div class="row align-items-center">
@@ -59,7 +61,7 @@
                 </div>
                 <div class="col-lg-6 order-lg-1">
                     <div class="p-5">
-                        <h3 class="display-5">Simplify Company<br>Managment</h3>
+                        <h3 class="display-4">Simplify Company<br>Managment</h3>
                         <p>Our Project is advanced tool to improve managing work time and creating schedules in Your Firm   </p>
                     </div>
                 </div>
@@ -67,23 +69,63 @@
         </div>
     </section>
 
+<!-----------------------ABOUT------------------------>
+
     <section id="About">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <div class="p-5">
+                <div class="col-lg-5">
+                    <div class="p-6">
                         <img class="img-fluid" src="resources/img/graph_arrow.png" alt="">
                     </div>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-7">
                     <div class="p-5">
                         <h2 class="display-4">About</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod aliquid, mollitia odio veniam sit iste esse assumenda amet aperiam exercitationem, ea animi blanditiis recusandae! Ratione voluptatum molestiae adipisci, beatae obcaecati.</p>
+                        <p>
+                            Transfer Your business to a higher level thanks to the electronic
+                            management of your employees' work time. Our application allows You
+                            to record working time, manage your employees' salary and control
+                            the hours worked. Save time by generating monthly and annual summaries
+                            for each employee along with the payment.
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+<!-----------------------FUNCTIONS------------------------>
+
+<section class="Functions" id="Functions">
+    <div class="container">
+        <h2 style="text-align: left" class="display-4">Functions</h2>
+        <div class="row">
+
+            <div class="col">
+                <figure>
+                    <a href="#"><img src="resources/img/edit.png" alt="EDIT"></a>
+                    <figcaption>Edit Online</figcaption>More possibilities thanks to the preview of the online work schedule
+                </figure>
+            </div>
+
+            <div class="col">
+                <figure>
+                    <a href="#"><img src="resources/img/pdf_icon.png" alt="EXPORT"></a>
+                    <figcaption>Save&Export</figcaption>You can save the schedule to PDF files for importing to other software
+                </figure>
+            </div>
+
+            <div class="col">
+                <figure>
+                    <a href="#"><img src="resources/img/print.png" alt="PRINT"></a>
+                    <figcaption>Print</figcaption> Dedicated printouts adapted to the A4 page
+                </figure>
+            </div>
+        </div>
+    </div>
+</section>
+
 
 <!-----------------------FOOTER------------------------>
     <footer class="py-3 bg-black">
