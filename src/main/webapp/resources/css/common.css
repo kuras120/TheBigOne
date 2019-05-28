@@ -29,16 +29,33 @@ body
 }
 
 /**********NAVBAR**********/
+.navbar{
+    background-color: #6fa3f4;
+}
 .navbar-custom .navbar-nav .nav-item .nav-link
 {
     text-transform: uppercase;
     font-size: 0.8rem;
     font-weight: 700;
     letter-spacing: 0.1rem;
-;
-
 }
+
+.navbar-brand
+{
+    font-size: 1.5rem;
+}
+
 .logout_btn
+{
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+    padding-top: 6px;
+    display: block;
+    padding-bottom: 0.5rem;
+    color: rgba(0,0,0,.5);
+}
+.logout_btn2
 {
     font-size: 0.8rem;
     font-weight: 700;
@@ -195,4 +212,4 @@ body
     padding-top: 1rem;
     padding-top: 1rem;
 }
-.modal
+

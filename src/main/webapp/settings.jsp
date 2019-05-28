@@ -1,5 +1,9 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="contextPath" value="${pageContext.request.contextPath}"/>
+
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -29,54 +33,54 @@
                     </li>
 
                     <li class="nav-item">
-                        <button class="btn logout_btn" onclick="document.forms['logoutForm'].submit()">LOGOUT</button>
+                        <button class="btn logout_btn2" onclick="document.forms['logoutForm'].submit()">LOGOUT</button>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
     <!-----------------------BODY------------------------>
+
     <section id="Data">
-    <div class="container">
-        <h4 class="box-header"><i class="fas fa-user-circle"></i>
-            <span>Personal Data</span>
-        </h4>
-    <table class="table nie_xx">
-        <tbody>
-        <tr>
-            <td>Name:</td>
-            <span></span>
-        </tr>
-        <tr>
-            <td>Surname:</td>
-            <span></span>
-        </tr>
-        </tbody>
-    </table>
-        <input type="submit" value="Change" class="btn float-left login_btn">
+        <div class="container">
+            <h4 class="box-header"><i class="fas fa-user-circle"></i>
+                <span>Personal Data</span>
+            </h4>
+            <table class="table nie_xx">
+                <tbody>
+                <tr>
+                    <td>Name:</td>
+                    <span></span>
+                </tr>
+                <tr>
+                    <td>Surname:</td>
+                    <span></span>
+                </tr>
+                </tbody>
+            </table>
+            <input type="submit" value="Change" class="btn float-left login_btn">
 
-        <div class="settings_buton">
-        <h4 class="box-bottom"><i class="fas fa-user-cog"></i>
-            <span>Settings</span>
-        </h4>
-            <div class="col-sm-1 col-md-1 offset-md-1">
-                <figure>
-                    <a href="#" data-toggle="modal" data-target="#change_password"><img src="resources/img/change_password.png" alt="CHANGE PASSWORD"></a>
-                    <figcaption>CHANGE PASSWORD</figcaption>
-                </figure>
+            <div class="settings_buton">
+                <h4 class="box-bottom"><i class="fas fa-user-cog"></i>
+                    <span>Settings</span>
+                </h4>
+                <div class="col-sm-1 col-md-1 offset-md-1">
+                    <figure>
+                        <a href="#" data-toggle="modal" data-target="#change_password"><img src="resources/img/change_password.png" alt="CHANGE PASSWORD"></a>
+                        <figcaption>CHANGE PASSWORD</figcaption>
+                    </figure>
+                </div>
+
+                <div class="col-sm-1 col-md-1 offset-md-1">
+                    <figure>
+                        <a href="#" data-toggle="modal" data-target="#delete_account"><img src="resources/img/delete_account.png" alt="DELETE ACCOUNT"></a>
+                        <figcaption>DELETE ACCOUNT</figcaption>
+                    </figure>
+                </div>
+
             </div>
-
-            <div class="col-sm-1 col-md-1 offset-md-1">
-                <figure>
-                    <a href="#" data-toggle="modal" data-target="#delete_account"><img src="resources/img/delete_account.png" alt="DELETE ACCOUNT"></a>
-                    <figcaption>DELETE ACCOUNT</figcaption>
-                </figure>
-            </div>
-
         </div>
-    </div>
     </section>
-
 
 
     <!-----------------------CHANGE PASSWORD MODAL------------------------>
