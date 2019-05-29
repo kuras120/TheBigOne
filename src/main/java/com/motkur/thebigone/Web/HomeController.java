@@ -1,5 +1,4 @@
 package com.motkur.thebigone.Web;
-
 import com.motkur.thebigone.Model.User;
 import com.motkur.thebigone.Service.Interface.IGroupService;
 import com.motkur.thebigone.Service.Interface.ISecurityService;
@@ -12,7 +11,6 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-
 import java.time.LocalDateTime;
 
 @Controller
