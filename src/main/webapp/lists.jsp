@@ -37,5 +37,124 @@
     </div>
 </nav>
 
+
+<!-----------------------TABLE------------------------>
+<section id="Data">
+    <div class="container">
+        <div class="table-responsive">
+            <h4 class="box-header"><i class="far fa-calendar-check"></i>
+                <span>My Lists</span>
+            </h4>
+            <table id="myLists" class="table table-hover table-striped">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Group Name</th>
+                    <th>Manager</th>
+                    <th>Last Modified</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>My Group</td>
+                    <td>PAPAJ </td>
+                    <td>27-05-2019</td>
+                    <td>
+                        <div>
+                            <a href="#"><img src="resources/img/edit.png" alt="Edit"></a>
+                            <a href="#" ><img src="resources/img/manage_lists.png" alt="Manage"></a>
+                            <a href="#" data-toggle="modal" data-target="#delete_group"><img src="resources/img/delete_group.png" alt="Delete_Group"></a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Somebody's Group</td>
+                    <td>ManagerOfGroup</td>
+                    <td>11-04-2019</td>
+                    <td>
+                        <div>
+                            <a href="#"><img src="resources/img/edit.png" alt="Edit"></a>
+                            <a href="#" data-toggle="modal" data-target="#leave_group"><img src="resources/img/leave_group.png" alt="Leave_Group"></a>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+
+<!-----------------------DELETE GROUP MODAL------------------------>
+<div class="modal" tabindex="-1" role="dialog" id="delete_group">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Delete Group</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <h7>Do You really want to delete Your group?</h7>
+                    <div class="input-group form-group delete_account">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-key"></i></span>
+                        </div>
+                        <input type="password" class="form-control" placeholder="password">
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <input type="submit" value="Submit" class="btn float-right login_btn">
+                <button type="button" class="btn btn-secondary modal_btn" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-----------------------LEAVE GROUP MODAL------------------------>
+<div class="modal" tabindex="-1" role="dialog" id="leave_group">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Leave Group</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <h7>Do You really want to leave group?</h7>
+                    <div class="input-group form-group delete_account">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-key"></i></span>
+                        </div>
+                        <input type="password" class="form-control" placeholder="password">
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <input type="submit" value="Submit" class="btn float-right login_btn">
+                <button type="button" class="btn btn-secondary modal_btn" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="${contextPath}/resources/js/common.js"></script>
 </body>
 </html>
