@@ -66,14 +66,14 @@
                 </h4>
                 <div class="col-sm-1 col-md-1 offset-md-1">
                     <figure>
-                        <a href="#" data-toggle="modal" data-target="#change_password"><img src="resources/img/change_password.png" alt="CHANGE PASSWORD"></a>
+                        <a href="#" data-toggle="modal" data-target="#change_password" title="Change Password"><img src="resources/img/change_password.png" alt="CHANGE PASSWORD"></a>
                         <figcaption>CHANGE PASSWORD</figcaption>
                     </figure>
                 </div>
 
                 <div class="col-sm-1 col-md-1 offset-md-1">
                     <figure>
-                        <a href="#" data-toggle="modal" data-target="#delete_account"><img src="resources/img/delete_account.png" alt="DELETE ACCOUNT"></a>
+                        <a href="#" data-toggle="modal" data-target="#delete_account" title="Delete Account"><img src="resources/img/delete_account.png" alt="DELETE ACCOUNT"></a>
                         <figcaption>DELETE ACCOUNT</figcaption>
                     </figure>
                 </div>
