@@ -67,7 +67,7 @@
                     <td>27-05-2019</td>
                     <td>
                         <div>
-                            <a href="#"><img src="resources/img/edit.pngt" title="Edit"  alt="Edit"></a>
+                            <a href="#"><img src="resources/img/edit.png" title="Edit"  alt="Edit"></a>
                             <a href="#" ><img src="resources/img/manage_lists.png"  title="Manage" alt="Manage"></a>
                             <a href="#" data-toggle="modal" data-target="#delete_group"><img src="resources/img/delete_group.png"  title ="Delete Group" alt="Delete_Group"></a>
                         </div>
