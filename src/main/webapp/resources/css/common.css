@@ -14,7 +14,7 @@ body
     background-image: url("../img/background.jpg"), url("../img/background2.jpg");
     background-repeat: no-repeat, repeat;
     background-size: cover;
-    font-family: Lato
+    font-family: Lato, serif;
 }
 
 .container
@@ -215,6 +215,7 @@ body
     padding-top: 6rem;
     padding-left: 12rem;
     clear: both;
+
 }
 .box-header
 {
@@ -245,6 +246,19 @@ body
 .delete_account
 {
     padding-top: 1rem;
-    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+/**********LISTS**********/
+#myLists
+{
+    vertical-align: middle;
+    text-align: center;
+}
+#myLists img
+{
+    width: 50px;
+    height: 32px;
+    padding-right: 1rem;
 }
 

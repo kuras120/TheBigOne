@@ -46,7 +46,7 @@
             <h4 class="box-header"><i class="fas fa-user-circle"></i>
                 <span>Personal Data</span>
             </h4>
-            <table class="table nie_xx">
+            <table class="table">
                 <tbody>
                 <tr>
                     <td>Name:</td>
