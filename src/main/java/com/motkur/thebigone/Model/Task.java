@@ -13,10 +13,10 @@ public class Task {
     private long id;
     private String name;
     private String description;
-    @Column(name = "time_spent")
-    private LocalTime timeSpent;
-    @Column(name = "created_on")
-    private LocalDateTime createdOn;
+    @Column(name = "started_on")
+    private LocalDateTime startedOn;
+    @Column(name = "ended_on")
+    private LocalDateTime endedOn;
     @ManyToOne
     @JoinColumn(name = "user_from_group")
     private UserGroup userFromGroup;
@@ -45,20 +45,20 @@ public class Task {
         this.description = description;
     }
 
-    public LocalTime getTimeSpent() {
-        return timeSpent;
+    public LocalDateTime getStartedOn() {
+        return startedOn;
     }
 
-    public void setTimeSpent(LocalTime timeSpent) {
-        this.timeSpent = timeSpent;
+    public void setStartedOn(LocalDateTime startedOn) {
+        this.startedOn = startedOn;
     }
 
-    public LocalDateTime getCreatedOn() {
-        return createdOn;
+    public LocalDateTime getEndedOn() {
+        return endedOn;
     }
 
-    public void setCreatedOn(LocalDateTime createdOn) {
-        this.createdOn = createdOn;
+    public void setEndedOn(LocalDateTime endedOn) {
+        this.endedOn = endedOn;
     }
 
     public UserGroup getUserFromGroup() {

@@ -34,4 +34,9 @@ public class TasksController {
     public String editMonth(Model model) {
         return "editMonth";
     }
+
+    @GetMapping("/lists/name/manage")
+    public String manageList(Model model) {
+        return "manageList";
+    }
 }
