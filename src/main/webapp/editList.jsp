@@ -47,7 +47,7 @@
 <section id="Data">
     <div class="container">
         <div class="table-responsive">
-            <h4 class="box-header"><i class="far fa-calendar-check"></i>
+            <h4 class="box-header"><i class="fas fa-users"></i>
                 <span>Group_Name</span>
             </h4>
             <table id="editList" class="table table-hover table-striped">

@@ -24,4 +24,19 @@ public class TasksController {
     public String lists(@ModelAttribute("userForm") User userForm, Model model) {
         return "lists";
     }
+
+    @GetMapping("/lists/name")
+    public String editList(Model model) {
+        return "editList";
+    }
+
+    @GetMapping("/lists/name/month")
+    public String editMonth(Model model) {
+        return "editMonth";
+    }
+
+    @GetMapping("/lists/name/manage")
+    public String manageList(Model model) {
+        return "manageList";
+    }
 }

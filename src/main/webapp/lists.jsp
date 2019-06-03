@@ -69,7 +69,7 @@
                     <td>
                         <div>
                             <a href="${contextPath}/lists/name"><img src="resources/img/edit.png" title="Edit List"  alt="Edit List"></a>
-                            <a href="#" ><img src="resources/img/manage_lists.png"  title="Manage" alt="Manage"></a>
+                            <a href="${contextPath}/lists/name/manage" ><img src="resources/img/manage_lists.png"  title="Manage" alt="Manage"></a>
                             <a href="#" data-toggle="modal" data-target="#delete_group"><img src="resources/img/delete_group.png"  title ="Delete Group" alt="Delete_Group"></a>
                         </div>
                     </td>
@@ -81,7 +81,7 @@
                     <td>11-04-2019</td>
                     <td>
                         <div>
-                            <a href="#"><img src="resources/img/edit.png"  title="Edit Group" alt="Edit Group"></a>
+                            <a href="${contextPath}/lists/name"><img src="resources/img/edit.png"  title="Edit Group" alt="Edit Group"></a>
                             <a href="#" data-toggle="modal" data-target="#leave_group" title="Leave Group"><img src="resources/img/leave_group.png" alt="Leave_Group"></a>
                         </div>
                     </td>

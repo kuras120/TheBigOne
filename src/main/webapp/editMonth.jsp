@@ -61,90 +61,15 @@
                 </thead>
 
                 <tbody>
+                <% for (int i=1; i<=31; i++) { %>
                 <tr>
-                    <td>1</td>
+                    <td><%=i%></td>
                     <td> <input type="text" class="form-control" autofocus="true"/></td>
                     <td> <input type="text" class="form-control" autofocus="true"/></td>
                     <td> <input type="text" class="form-control" autofocus="true"/></td>
                 </tr>
-                <tr>
-                    <td>2</td>
-                    <td> <input type="text" class="form-control" autofocus="true"/></td>
-                    <td> <input type="text" class="form-control" autofocus="true"/></td>
-                    <td> <input type="text" class="form-control" autofocus="true"/></td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td> <input type="text" class="form-control" autofocus="true"/></td>
-                    <td> <input type="text" class="form-control" autofocus="true"/></td>
-                    <td> <input type="text" class="form-control" autofocus="true"/></td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td> <input type="text" class="form-control" autofocus="true"/></td>
-                    <td> <input type="text" class="form-control" autofocus="true"/></td>
-                    <td> <input type="text" class="form-control" autofocus="true"/></td>
-                </tr>
-                <tr>
-                    <td>5</td>
-                    <td> <input type="text" class="form-control" autofocus="true"/></td>
-                    <td> <input type="text" class="form-control" autofocus="true"/></td>
-                    <td> <input type="text" class="form-control" autofocus="true"/></td>
-                </tr>
-                <tr>
-                    <td>6</td>
-                    <td> <input type="text" class="form-control" autofocus="true"/></td>
-                    <td> <input type="text" class="form-control" autofocus="true"/></td>
-                    <td> <input type="text" class="form-control" autofocus="true"/></td>
-                </tr>
-                <tr>
-                    <td>7</td>
-                    <td> <input type="text" class="form-control" autofocus="true"/></td>
-                    <td> <input type="text" class="form-control" autofocus="true"/></td>
-                    <td> <input type="text" class="form-control" autofocus="true"/></td>
-                </tr>
-                <tr>
-                    <td>8</td>
-                    <td> <input type="text" class="form-control" autofocus="true"/></td>
-                    <td> <input type="text" class="form-control" autofocus="true"/></td>
-                    <td> <input type="text" class="form-control" autofocus="true"/></td>
-                </tr>
-                <tr>
-                    <td>9</td>
-                    <td> <input type="text" class="form-control" autofocus="true"/></td>
-                    <td> <input type="text" class="form-control" autofocus="true"/></td>
-                    <td> <input type="text" class="form-control" autofocus="true"/></td>
-                </tr>
-                <tr>
-                    <td>10</td>
-                    <td> <input type="text" class="form-control" autofocus="true"/></td>
-                    <td> <input type="text" class="form-control" autofocus="true"/></td>
-                    <td> <input type="text" class="form-control" autofocus="true"/></td>
-                </tr>
-                <tr>
-                    <td>11</td>
-                    <td> <input type="text" class="form-control" autofocus="true"/></td>
-                    <td> <input type="text" class="form-control" autofocus="true"/></td>
-                    <td> <input type="text" class="form-control" autofocus="true"/></td>
-                </tr>
-                <tr>
-                    <td>12</td>
-                    <td> <input type="text" class="form-control" autofocus="true"/></td>
-                    <td> <input type="text" class="form-control" autofocus="true"/></td>
-                    <td> <input type="text" class="form-control" autofocus="true"/></td>
-                </tr>
-                <tr>
-                    <td>13</td>
-                    <td> <input type="text" class="form-control" autofocus="true"/></td>
-                    <td> <input type="text" class="form-control" autofocus="true"/></td>
-                    <td> <input type="text" class="form-control" autofocus="true"/></td>
-                </tr>
-                <tr>
-                    <td>14</td>
-                    <td> <input type="text" class="form-control" autofocus="true"/></td>
-                    <td> <input type="text" class="form-control" autofocus="true"/></td>
-                    <td> <input type="text" class="form-control" autofocus="true"/></td>
-                </tr>
+                <% } %>
+
 
                 </tbody>
 
