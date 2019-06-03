@@ -50,8 +50,10 @@
         <div class="table-responsive">
             <h4 class="box-header"><i class="fas fa-users-cog"></i>
                 <span>Group_Name</span>
+
             </h4>
-            <table id="mamageGroup" class="table table-hover table-striped">
+
+            <table id="manageGroup" class="table  table-hover table-striped">
                 <thead>
                 <tr>
                     <th>Employee</th>
@@ -60,21 +62,58 @@
                     <th>Hourly rate</th>
                 </tr>
                 </thead>
-
                 <tbody>
                 <% for (int i=1; i<=10; i++) { %>
-                <tr>
+                <tr id="row">
                     <td>Janusz Kozłowski</td>
-                    <td> <input type="text" class="form-control" autofocus="true"/></td>
-                    <td> <input type="text" class="form-control" autofocus="true"/></td>
-                    <td> <input type="text" class="form-control" autofocus="true"/></td>
+                    <td><label for="position">
+                        <input type="text" class="form-control position" name="position" id="position" disabled autofocus="true">
+                    </label></td>
+                    <td><label for="last_month_hours">
+                        <input type="text" class="form-control" name="last_month_hours" id="last_month_hours" disabled autofocus="true">
+                    </label></td>
+                    <td><label for="hourly_rate">
+                        <input type="text" class="form-control hourly_rate" name="hourly_rate" id="hourly_rate" disabled autofocus="true"/>
+                    </label></td>
                 </tr>
                 <% } %>
-
 
                 </tbody>
 
             </table>
+            <input onclick="Change_value()" type="button" id="change_btn" class="btn float-right change_btn" value="Change">
+
+            <script>
+
+                var elem = document.getElementById("change_btn");
+                var work_position = document.getElementsByClassName("position");
+                var hourly_rate = document.getElementsByClassName("hourly_rate");
+
+                function Change_value()
+                {
+                    if (elem.value == "Change") {
+
+                        for (var i = 0; i < work_position.length; i++) {
+                            work_position.item(i).disabled = false;
+                            hourly_rate.item(i).disabled = false;
+
+                        }
+                        elem.value = "Submit";
+
+                    }
+
+                    else if (elem.value == "Submit") {
+
+                        for (var i = 0; i < work_position.length; i++) {
+                            work_position.item(i).disabled = true;
+                            hourly_rate.item(i).disabled = true;
+
+                        }
+                        elem.value = "Change";
+                    }
+                }
+            </script>
+
         </div>
     </div>
 </section>

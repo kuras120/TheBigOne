@@ -43,22 +43,64 @@
 
     <section id="Data">
         <div class="container">
-            <h4 class="box-header"><i class="fas fa-user-circle"></i>
-                <span>Personal Data</span>
-            </h4>
-            <table class="table">
-                <tbody>
-                <tr>
-                    <td>Name:</td>
-                    <span></span>
-                </tr>
-                <tr>
-                    <td>Surname:</td>
-                    <span></span>
-                </tr>
-                </tbody>
-            </table>
-            <input type="submit" value="Change" class="btn float-left login_btn">
+            <div class="table-responsive">
+                <h4 class="box-header"><i class="fas fa-user-circle"></i>
+                    <span>Personal Data</span>
+                </h4>
+                <table class="table">
+                    <tbody>
+                    <tr>
+                        <th>Name:</th>
+                        <td> <input type="text" id="Name" class="form-control" disabled autofocus="true"/></td>
+                    </tr>
+                    <tr>
+                        <th>Surname:</th>
+                        <td> <input type="text" id="Surname" class="form-control" disabled autofocus="true"/></td>
+                    </tr>
+                    <tr>
+                        <th>Address:</th>
+                        <td> <input type="text"  id="Address" class="form-control" disabled autofocus="true"/></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+            <input onclick="Change_value_settings()" type="button" id="change_btn" value="Change" class="btn float-left change_btn">
+
+
+
+            <script>
+
+                var elem = document.getElementById("change_btn");
+                var empl_name = document.getElementById("Name");
+                var surname = document.getElementById("Surname");
+                var address = document.getElementById("Address");
+
+                function Change_value_settings()
+                {
+                    if (elem.value == "Change")
+                    {
+                        empl_name.disabled = false;
+                        surname.disabled = false;
+                        address.disabled = false;
+                        elem.value = "Submit";
+
+                    }
+
+                    else if (elem.value == "Submit")
+                    {
+
+                        empl_name.disabled = true;
+                        surname.disabled = true;
+                        address.disabled = true;
+                        elem.value = "Change";
+                    }
+                }
+            </script>
+
+
+
 
             <div class="settings_buton">
                 <h4 class="box-bottom"><i class="fas fa-user-cog"></i>

@@ -210,9 +210,24 @@ body
 
 /**********SETTINGS**********/
 
+
+.change_btn{
+    color: black;
+    background-color: #FFC312;
+    width: 170px;
+}
+
+.change_btn:hover{
+    color: black;
+    background-color: white;
+}
+
+
+
 #Data
 {
-    padding-top: 6rem;
+    padding-top: 7rem;
+    padding-bottom: 6rem;
     padding-left: 12rem;
     clear: both;
 
@@ -220,7 +235,11 @@ body
 
 #Data .form-control
 {
-    background-color: lightyellow;
+    background-color: #f3f5c5;
+}
+#Data .form-control:disabled
+{
+    background-color: #e6e8b9;
 }
 
 
