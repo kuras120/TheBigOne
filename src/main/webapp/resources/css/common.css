@@ -235,7 +235,11 @@ body
 
 #Data .form-control
 {
-    background-color: lightyellow;
+    background-color: #f3f5c5;
+}
+#Data .form-control:disabled
+{
+    background-color: #e6e8b9;
 }
 
 
