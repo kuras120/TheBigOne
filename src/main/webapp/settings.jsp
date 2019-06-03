@@ -43,22 +43,30 @@
 
     <section id="Data">
         <div class="container">
-            <h4 class="box-header"><i class="fas fa-user-circle"></i>
-                <span>Personal Data</span>
-            </h4>
-            <table class="table">
-                <tbody>
-                <tr>
-                    <td>Name:</td>
-                    <span></span>
-                </tr>
-                <tr>
-                    <td>Surname:</td>
-                    <span></span>
-                </tr>
-                </tbody>
-            </table>
-            <input type="submit" value="Change" class="btn float-left login_btn">
+            <div class="table-responsive">
+                <h4 class="box-header"><i class="fas fa-user-circle"></i>
+                    <span>Personal Data</span>
+                </h4>
+                <table class="table">
+                    <tbody>
+                    <tr>
+                        <td>Name:</td>
+                        <td> <input type="text" class="form-control" disabled autofocus="true"/></td>
+                    </tr>
+                    <tr>
+                        <td>Surname:</td>
+                        <td> <input type="text" class="form-control" disabled autofocus="true"/></td>
+                    </tr>
+                    <tr>
+                        <td>Address:</td>
+                        <td> <input type="text" class="form-control" disabled autofocus="true"/></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+            <input type="submit" value="Change" class="btn float-left change_btn">
 
             <div class="settings_buton">
                 <h4 class="box-bottom"><i class="fas fa-user-cog"></i>

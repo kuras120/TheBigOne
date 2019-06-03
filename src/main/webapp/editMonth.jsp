@@ -74,6 +74,7 @@
                 </tbody>
 
             </table>
+            <input type="submit" value="Change" class="btn float-right change_btn">
         </div>
     </div>
 </section>

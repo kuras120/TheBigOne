@@ -50,8 +50,10 @@
         <div class="table-responsive">
             <h4 class="box-header"><i class="fas fa-users-cog"></i>
                 <span>Group_Name</span>
+
             </h4>
-            <table id="mamageGroup" class="table table-hover table-striped">
+
+            <table id="manageGroup" class="table table-hover table-striped">
                 <thead>
                 <tr>
                     <th>Employee</th>
@@ -60,21 +62,20 @@
                     <th>Hourly rate</th>
                 </tr>
                 </thead>
-
                 <tbody>
                 <% for (int i=1; i<=10; i++) { %>
                 <tr>
                     <td>Janusz Kozłowski</td>
-                    <td> <input type="text" class="form-control" autofocus="true"/></td>
-                    <td> <input type="text" class="form-control" autofocus="true"/></td>
-                    <td> <input type="text" class="form-control" autofocus="true"/></td>
+                    <td> <input type="text" class="form-control" disabled autofocus="true"></td>
+                    <td> <input type="text" class="form-control" disabled autofocus="true"></td>
+                    <td> <input type="text" class="form-control" disabled autofocus="true"/></td>
                 </tr>
                 <% } %>
-
 
                 </tbody>
 
             </table>
+            <input type="submit" value="Change" class="btn float-right change_btn">
         </div>
     </div>
 </section>

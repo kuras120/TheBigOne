@@ -210,9 +210,24 @@ body
 
 /**********SETTINGS**********/
 
+
+.change_btn{
+    color: black;
+    background-color: #FFC312;
+    width: 170px;
+}
+
+.change_btn:hover{
+    color: black;
+    background-color: white;
+}
+
+
+
 #Data
 {
-    padding-top: 6rem;
+    padding-top: 7rem;
+    padding-bottom: 6rem;
     padding-left: 12rem;
     clear: both;
 
