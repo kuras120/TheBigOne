@@ -42,12 +42,7 @@ public class HomeController {
             return "registration";
         }
 
-        userForm.setCreatedOn(LocalDateTime.now());
-        userForm.setLastLogin(userForm.getCreatedOn());
         userService.save(userForm);
-        groupService.save(userForm, null, "TestGruppe", true);
-        groupService.save(userForm, null, "MeinFührer", true);
-
         securityService.autoLogin(userForm.getUsername(), userForm.getPasswordConfirm());
 
         return "redirect:/welcome";
@@ -69,7 +64,7 @@ public class HomeController {
         String principalName = securityService.findLoggedInUsername();
         System.out.println(principalName);
         if (principalName != null) {
-            User user = userService.findByUsername(principalName);
+            User user = userService.getUser(principalName);
             model.addAttribute("groups", user.getGroups());
             model.addAttribute("userCreatedOn", user.getCreatedOn().toLocalDate());
         }

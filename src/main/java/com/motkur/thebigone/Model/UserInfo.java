@@ -11,8 +11,6 @@ public class UserInfo {
     private String name;
     private String surname;
     private String address;
-    @Column(name = "post_code")
-    private String postCode;
     @OneToOne(mappedBy = "userInfo")
     private User user;
 
@@ -46,14 +44,6 @@ public class UserInfo {
 
     public void setAddress(String address) {
         this.address = address;
-    }
-
-    public String getPostCode() {
-        return postCode;
-    }
-
-    public void setPostCode(String postCode) {
-        this.postCode = postCode;
     }
 
     public User getUser() {

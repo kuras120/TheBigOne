@@ -1,5 +1,6 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 
 <!DOCTYPE html>
@@ -47,60 +48,42 @@
                 <h4 class="box-header"><i class="fas fa-user-circle"></i>
                     <span>Personal Data</span>
                 </h4>
-                <table class="table">
-                    <tbody>
-                    <tr>
-                        <th>Name:</th>
-                        <td> <input type="text" id="Name" class="form-control" disabled autofocus="true"/></td>
-                    </tr>
-                    <tr>
-                        <th>Surname:</th>
-                        <td> <input type="text" id="Surname" class="form-control" disabled autofocus="true"/></td>
-                    </tr>
-                    <tr>
-                        <th>Address:</th>
-                        <td> <input type="text"  id="Address" class="form-control" disabled autofocus="true"/></td>
-                    </tr>
-                    </tbody>
-                </table>
+                <form:form method="POST" modelAttribute="userInfoForm">
+                    <table class="table">
+                        <tbody>
+                            <spring:bind path="name">
+                            <tr>
+                                <th>Name:</th>
+                                <td>
+                                    <form:input id="Name" type="text" path="name" class="form-control" placeholder="name" autofocus="false"></form:input>
+                                </td>
+                                <form:errors path="name"></form:errors>
+                            </tr>
+                            </spring:bind>
+                            <spring:bind path="surname">
+                            <tr>
+                                <th>Surname:</th>
+
+                                <td>
+                                    <form:input id="Surname" type="text" path="surname" class="form-control" placeholder="surname" autofocus="false"></form:input>
+                                </td>
+                                <form:errors path="surname"></form:errors>
+                            </tr>
+                            </spring:bind>
+                            <spring:bind path="address">
+                            <tr>
+                                <th>Address:</th>
+                                <td>
+                                    <form:input id="Address" type="text" path="address" class="form-control" placeholder="address" autofocus="false"></form:input>
+                                </td>
+                                <form:errors path="address"></form:errors>
+                            </tr>
+                            </spring:bind>
+                        </tbody>
+                    </table>
+                    <input type="submit" value="Change" class="btn float-left change_btn">
+                </form:form>
             </div>
-
-
-            <input onclick="Change_value_settings()" type="button" id="change_btn" value="Change" class="btn float-left change_btn">
-
-
-
-            <script>
-
-                var elem = document.getElementById("change_btn");
-                var empl_name = document.getElementById("Name");
-                var surname = document.getElementById("Surname");
-                var address = document.getElementById("Address");
-
-                function Change_value_settings()
-                {
-                    if (elem.value == "Change")
-                    {
-                        empl_name.disabled = false;
-                        surname.disabled = false;
-                        address.disabled = false;
-                        elem.value = "Submit";
-
-                    }
-
-                    else if (elem.value == "Submit")
-                    {
-
-                        empl_name.disabled = true;
-                        surname.disabled = true;
-                        address.disabled = true;
-                        elem.value = "Change";
-                    }
-                }
-            </script>
-
-
-
 
             <div class="settings_buton">
                 <h4 class="box-bottom"><i class="fas fa-user-cog"></i>

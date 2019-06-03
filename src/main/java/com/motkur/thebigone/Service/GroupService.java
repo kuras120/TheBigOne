@@ -7,6 +7,7 @@ import com.motkur.thebigone.Repository.GroupRepository;
 import com.motkur.thebigone.Repository.UserGroupRepository;
 import com.motkur.thebigone.Service.Interface.IGroupService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -17,17 +18,29 @@ public class GroupService implements IGroupService {
     private UserGroupRepository userGroupRepository;
     @Autowired
     private GroupRepository groupRepository;
+    @Autowired
+    private BCryptPasswordEncoder bCryptPasswordEncoder;
 
     @Override
-    public void save(User user, Group group, String name, boolean admin) {
-        if (admin) {
-            if (group == null) group = new Group();
-            group.setName(name);
-            group.setCreatedBy(user);
-            group.setCreatedOn(LocalDateTime.now());
+    public Group get(String name, String password) {
+        Group group = groupRepository.findByName(name);
+        if (group.getPassword().equals(bCryptPasswordEncoder.encode(password))) return group;
+        else return null;
+    }
 
-            groupRepository.save(group);
-        }
+    @Override
+    public void create(User user, Group group) {
+        group.setPassword(bCryptPasswordEncoder.encode(group.getPassword()));
+        group.setCreatedOn(LocalDateTime.now());
+        group.setCreatedBy(user);
+
+        groupRepository.save(group);
+
+        join(user, group);
+    }
+
+    @Override
+    public void join(User user, Group group) {
         UserGroup userGroup = new UserGroup();
         userGroup.setUser(user);
         userGroup.setGroup(group);
