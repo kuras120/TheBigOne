@@ -48,7 +48,7 @@
     <div class="container">
         <div class="table-responsive">
             <h4 class="box-header"><i class="far fa-calendar-plus"></i>
-                <span>Month_Name</span>
+                <span>${month}</span>
             </h4>
             <table id="editList" class="table table-hover table-striped">
                 <thead>
@@ -69,8 +69,6 @@
                     <td> <input type="text" class="form-control" autofocus="true"/></td>
                 </tr>
                 <% } %>
-
-
                 </tbody>
 
             </table>

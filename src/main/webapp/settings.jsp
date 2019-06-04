@@ -55,7 +55,7 @@
                             <tr>
                                 <th>Name:</th>
                                 <td>
-                                    <form:input id="Name" type="text" path="name" class="form-control" placeholder="name" autofocus="false"></form:input>
+                                    <form:input type="text" path="name" class="form-control" placeholder="name" autofocus="false"></form:input>
                                 </td>
                                 <form:errors path="name"></form:errors>
                             </tr>
@@ -65,7 +65,7 @@
                                 <th>Surname:</th>
 
                                 <td>
-                                    <form:input id="Surname" type="text" path="surname" class="form-control" placeholder="surname" autofocus="false"></form:input>
+                                    <form:input type="text" path="surname" class="form-control" placeholder="surname" autofocus="false"></form:input>
                                 </td>
                                 <form:errors path="surname"></form:errors>
                             </tr>
@@ -74,7 +74,7 @@
                             <tr>
                                 <th>Address:</th>
                                 <td>
-                                    <form:input id="Address" type="text" path="address" class="form-control" placeholder="address" autofocus="false"></form:input>
+                                    <form:input type="text" path="address" class="form-control" placeholder="address" autofocus="false"></form:input>
                                 </td>
                                 <form:errors path="address"></form:errors>
                             </tr>
@@ -118,16 +118,14 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form:form method="POST" modelAttribute="userChangePasswordForm">
+                <form:form method="POST" action="/settings/change_password">
                 <div class="modal-body">
-
-
                         <div class="input-group form-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-key"></i></span>
                             </div>
                             <spring:bind path="oldPassword">
-                            <form:input type="password" class="form-control" path="oldPassword" placeholder=" old password"></form:input>
+                            <form:input type="password" class="form-control" path="oldPassword" placeholder="old password"></form:input>
                             </spring:bind>
                         </div>
 
@@ -136,7 +134,7 @@
                                 <span class="input-group-text"><i class="fas fa-key"></i></span>
                             </div>
                             <spring:bind path="newPassword">
-                                <form:input type="password" class="form-control" path="newPassword" placeholder=" new password"></form:input>
+                                <form:input type="password" class="form-control" path="newPassword" placeholder="new password"></form:input>
                             </spring:bind>
                         </div>
 
@@ -145,7 +143,7 @@
                                 <span class="input-group-text"><i class="fas fa-key"></i></span>
                             </div>
                             <spring:bind path="confirmPassword">
-                                <form:input type="password" class="form-control" path="confirmPassword" placeholder=" old password"></form:input>
+                                <form:input type="password" class="form-control" path="confirmPassword" placeholder="old password"></form:input>
                             </spring:bind>
                         </div>
 

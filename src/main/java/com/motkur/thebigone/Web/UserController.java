@@ -1,10 +1,12 @@
 package com.motkur.thebigone.Web;
+import com.motkur.thebigone.Model.Group;
 import com.motkur.thebigone.Model.UserInfo;
 import com.motkur.thebigone.Service.Interface.IGroupService;
 import com.motkur.thebigone.Service.Interface.ISecurityService;
 import com.motkur.thebigone.Service.Interface.IUserService;
+import com.motkur.thebigone.Validator.CreateGroupValidator;
+import com.motkur.thebigone.Validator.JoinGroupValidator;
 import com.motkur.thebigone.Validator.UserInfoValidator;
-import com.motkur.thebigone.Validator.UserValidator;
 import com.motkur.thebigone.Model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,6 +22,22 @@ public class UserController {
     private ISecurityService securityService;
     @Autowired
     private UserInfoValidator userInfoValidator;
+
+    @GetMapping("/welcome")
+    public String welcome(Model model) {
+        model.addAttribute("joinGroupForm", new Group());
+        model.addAttribute("createGroupForm", new Group());
+
+        String principalName = securityService.findLoggedInUsername();
+        System.out.println(principalName);
+        if (principalName != null) {
+            User user = userService.getUser(principalName);
+            model.addAttribute("groups", user.getGroups());
+            model.addAttribute("userCreatedOn", user.getCreatedOn().toLocalDate());
+        }
+
+        return "welcome";
+    }
 
     @GetMapping("/settings")
     public String settings(Model model) {

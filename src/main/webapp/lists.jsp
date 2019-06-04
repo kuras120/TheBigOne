@@ -61,31 +61,21 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>My Group</td>
-                    <td>PAPAJ </td>
-                    <td>27-05-2019</td>
-                    <td>
-                        <div>
-                            <a href="${contextPath}/lists/PAPAJ"><img src="resources/img/edit.png" title="Edit List"  alt="Edit List"></a>
-                            <a href="${contextPath}/lists/PAPAJ/manage" ><img src="resources/img/manage_lists.png"  title="Manage" alt="Manage"></a>
-                            <a href="#" data-toggle="modal" data-target="#delete_group"><img src="resources/img/delete_group.png"  title ="Delete Group" alt="Delete_Group"></a>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Somebody's Group</td>
-                    <td>ManagerOfGroup</td>
-                    <td>11-04-2019</td>
-                    <td>
-                        <div>
-                            <a href="${contextPath}/lists/Somebody's Group"><img src="resources/img/edit.png"  title="Edit Group" alt="Edit Group"></a>
-                            <a href="#" data-toggle="modal" data-target="#leave_group" title="Leave Group"><img src="resources/img/leave_group.png" alt="Leave_Group"></a>
-                        </div>
-                    </td>
-                </tr>
+                <c:forEach items="${groups}" var="group" varStatus="loop">
+                    <tr>
+                        <td>${loop.index + 1}</td>
+                        <td>${group.getGroup().getName()}</td>
+                        <td>${group.getGroup().getCreatedBy().getUsername()}</td>
+                        <td>${group.getGroup().getCreatedOn().toLocalDate()}</td>
+                        <td>
+                            <div>
+                                <a href="${contextPath}/lists/${group.getGroup().getName()}"><img src="resources/img/edit.png" title="Edit List"  alt="Edit List"></a>
+                                <a href="${contextPath}/lists/${group.getGroup().getName()}/manage" ><img src="resources/img/manage_lists.png"  title="Manage" alt="Manage"></a>
+                                <a href="#" data-toggle="modal" data-target="#delete_group"><img src="resources/img/delete_group.png"  title ="Delete Group" alt="Delete_Group"></a>
+                            </div>
+                        </td>
+                    </tr>
+                </c:forEach>
                 </tbody>
             </table>
         </div>

@@ -59,19 +59,6 @@ public class HomeController {
         return "login";
     }
 
-    @GetMapping("/welcome")
-    public String welcome(Model model) {
-        String principalName = securityService.findLoggedInUsername();
-        System.out.println(principalName);
-        if (principalName != null) {
-            User user = userService.getUser(principalName);
-            model.addAttribute("groups", user.getGroups());
-            model.addAttribute("userCreatedOn", user.getCreatedOn().toLocalDate());
-        }
-
-        return "welcome";
-    }
-
     @GetMapping({"/", "/home"})
     public String home(Model model) {
 

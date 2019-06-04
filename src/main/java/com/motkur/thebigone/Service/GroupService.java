@@ -22,9 +22,9 @@ public class GroupService implements IGroupService {
     private BCryptPasswordEncoder bCryptPasswordEncoder;
 
     @Override
-    public Group get(String name, String password) {
-        Group group = groupRepository.findByName(name);
-        if (group.getPassword().equals(bCryptPasswordEncoder.encode(password))) return group;
+    public Group get(Group group) {
+        Group dbGroup = groupRepository.findByName(group.getName());
+        if (group.getPassword().equals(bCryptPasswordEncoder.encode(group.getPassword()))) return dbGroup;
         else return null;
     }
 

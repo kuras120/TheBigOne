@@ -48,7 +48,7 @@
     <div class="container">
         <div class="table-responsive">
             <h4 class="box-header"><i class="fas fa-users"></i>
-                <span>Group_Name</span>
+                <span>${groupName}</span>
             </h4>
             <table id="editList" class="table table-hover table-striped">
                 <thead>
@@ -59,19 +59,19 @@
                 </thead>
                 <tbody>
                 <tr>
-                    <td><a href="${contextPath}/lists/name/month" title="Edit" >Luty 2019</a> </td>
+                    <td><a href="${contextPath}/lists/${groupName}/luty" title="Edit" >Luty 2019</a> </td>
                     <td>01-03-2019</td>
                 </tr>
                 <tr>
-                    <td><a href="${contextPath}/lists/name/month" title="Edit" >Marzec 2019</a> </td>
+                    <td><a href="${contextPath}/lists/${groupName}/marzec" title="Edit" >Marzec 2019</a> </td>
                     <td>01-04-2019</td>
                 </tr>
                 <tr>
-                    <td><a href="${contextPath}/lists/name/month" title="Edit" >Kwiecień 2019</a> </td>
+                    <td><a href="${contextPath}/lists/${groupName}/kwiecien" title="Edit" >Kwiecień 2019</a> </td>
                     <td>01-05-2019</td>
                 </tr>
                 <tr>
-                    <td><a href="${contextPath}/lists/name/month" title="Edit" >Maj 2019</a> </td>
+                    <td><a href="${contextPath}/lists/${groupName}/maj" title="Edit" >Maj 2019</a> </td>
                     <td>01-06-2019</td>
                 </tr>
 

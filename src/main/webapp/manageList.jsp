@@ -49,7 +49,7 @@
     <div class="container">
         <div class="table-responsive">
             <h4 class="box-header"><i class="fas fa-users-cog"></i>
-                <span>Group_Name</span>
+                <span>${groupName}</span>
 
             </h4>
 
