@@ -118,32 +118,39 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
+                <form:form method="POST" modelAttribute="userChangePasswordForm">
                 <div class="modal-body">
-                    <form>
+
 
                         <div class="input-group form-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-key"></i></span>
                             </div>
-                            <input type="password" class="form-control" placeholder=" old password">
+                            <spring:bind path="oldPassword">
+                            <form:input type="password" class="form-control" path="oldPassword" placeholder=" old password"></form:input>
+                            </spring:bind>
                         </div>
 
                         <div class="input-group form-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-key"></i></span>
                             </div>
-                            <input type="password" class="form-control" placeholder="new password">
+                            <spring:bind path="newPassword">
+                                <form:input type="password" class="form-control" path="newPassword" placeholder=" new password"></form:input>
+                            </spring:bind>
                         </div>
 
                         <div class="input-group form-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-key"></i></span>
                             </div>
-                            <input type="password" class="form-control" placeholder=" confirm password">
+                            <spring:bind path="confirmPassword">
+                                <form:input type="password" class="form-control" path="confirmPassword" placeholder=" old password"></form:input>
+                            </spring:bind>
                         </div>
 
 
-                    </form>
+                    </form:form>
                 </div>
                 <div class="modal-footer">
                     <input type="submit" value="Change" class="btn float-right login_btn">
@@ -163,22 +170,26 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
+                <form:form method="POST" modelAttribute="userDeleteAccountForm">
                 <div class="modal-body">
-                    <form>
+
                         <h7>Do You really want to delete Your account?</h7>
                         <div class="input-group form-group delete_account">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-key"></i></span>
                             </div>
-                            <input type="password" class="form-control" placeholder="password">
+                            <spring:bind path="password">
+                                <form:input type="password" class="form-control" path="password" placeholder="password"></form:input>
+                            </spring:bind>
                         </div>
 
-                    </form>
+
                 </div>
                 <div class="modal-footer">
                     <input type="submit" value="Submit" class="btn float-right login_btn">
                     <button type="button" class="btn btn-secondary modal_btn" data-dismiss="modal">Close</button>
                 </div>
+                </form:form>
             </div>
         </div>
     </div>

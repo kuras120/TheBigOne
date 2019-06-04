@@ -1,5 +1,6 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 
 <!DOCTYPE html>
@@ -88,28 +89,31 @@
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
+                        <form:form method=" post" modelAttribute="joinGrupFrom">
                         <div class="modal-body">
-                            <form>
+
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="fas fa-users"></i></span>
                                     </div>
-                                    <input type="text" class="form-control" placeholder="group name">
+                                    <form:input type="text" class="form-control" path="name" placeholder="group name"></form:input>
+                                    <form:errors path="name"></form:errors>
                                 </div>
 
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="fas fa-key"></i></span>
                                     </div>
-                                    <input type="password" class="form-control" placeholder="password">
+                                    <spring:bind path="password">
+                                        <form:input type="password" class="form-control" path="password" placeholder="password"></form:input>
+                                    </spring:bind>
                                 </div>
-
-                            </form>
                         </div>
                         <div class="modal-footer">
                             <input type="submit" value="Join" class="btn float-right login_btn">
                             <button type="button" class="btn btn-secondary modal_btn" data-dismiss="modal">Close</button>
                         </div>
+                        </form:form>
                     </div>
                 </div>
             </div>
@@ -124,104 +128,46 @@
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
+                        <form:form method="POST" modelAttribute="addGroupForm">
                         <div class="modal-body">
-                            <form>
+
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="fas fa-users"></i></span>
                                     </div>
-                                    <input type="text" class="form-control" placeholder="group name">
+                                    <form:input type="text" class="form-control" path="name" placeholder="group name"></form:input>
+                                    <form:errors path="name"></form:errors>
                                 </div>
 
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="fas fa-key"></i></span>
                                     </div>
-                                    <input type="password" class="form-control" placeholder="password">
+                                    <spring:bind path="password">
+                                    <form:input type="password" class="form-control" path="password" placeholder="password"></form:input>
+                                    </spring:bind>
                                 </div>
 
                                 <div class="input-group form-group">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="fas fa-key"></i></span>
                                     </div>
-                                    <input type="password" class="form-control" placeholder="confirm password">
+                                    <spring:bind path="passwordConfirm">
+                                        <form:input type="password" class="form-control" path="passwordConfirm" placeholder="confirm password"></form:input>
+                                    </spring:bind>
                                 </div>
 
-                            </form>
                         </div>
                         <div class="modal-footer">
                             <input type="submit" value="Create" class="btn float-right login_btn">
                             <button type="button" class="btn btn-secondary modal_btn" data-dismiss="modal">Close</button>
                         </div>
+                        </form:form>
                     </div>
                 </div>
             </div>
 
-            <!--  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <form id="logoutForm" method="POST" action="${contextPath}/logout">
-                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-            </form>
-            <a class="navbar-brand" href="#"> #</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarText">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        Welcome ${pageContext.request.userPrincipal.name}
-                    </li>
-                </ul>
-                <span class="navbar-text">
-                    <button class="btn" onclick="document.forms['logoutForm'].submit()">Logout</button>
-                </span>
-            </div>
-        </nav>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-6">
-                    <div class="row" style="border: 1px solid black;">
-                        <div class="col-6 pt-3">
-                            Nickname: ${pageContext.request.userPrincipal.name}<br/>
-                            Created on: ${userCreatedOn}
-                        </div>
-                        <div class="col-6 pt-3"><i class="fas fa-user fa-10x"></i></div>
-                    </div>
-                    <div class="row" style="height: 70vh;">
-                        <div class="col-12" style="padding: 0 !important; border: 1px solid black;">
-                            <table class="table">
-                                <thead class="thead-dark">
-                                <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">Recently added</th>
-                                    <th scope="col">Date</th>
-                                    <th scope="col">Time</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Group1</td>
-                                    <td>Date1</td>
-                                    <td>Time1</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>Group2</td>
-                                    <td>Date2</td>
-                                    <td>Time2</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>Group3</td>
-                                    <td>Date3</td>
-                                    <td>Time3</td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6" style="border: 1px solid black;">
+            <!-- <div class="col-6" style="border: 1px solid black;">
                     <div class="row">
                         <div class="col-12 pt-3">
                             <h3>Your groups: </h3>
