@@ -4,6 +4,8 @@ import com.motkur.thebigone.Model.Group;
 import com.motkur.thebigone.Model.User;
 
 public interface IGroupService {
-    void save(User user, Group group, String name, boolean admin);
+    Group get(Group group);
+    void create(User user, Group group);
+    void join(User user, Group group);
 
 }

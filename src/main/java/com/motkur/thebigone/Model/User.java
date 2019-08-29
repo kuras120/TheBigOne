@@ -18,6 +18,9 @@ public class User {
     private LocalDateTime createdOn;
     @Column(name = "last_login")
     private LocalDateTime lastLogin;
+    @OneToOne
+    @JoinColumn(name = "user_info")
+    private UserInfo userInfo;
     @OneToMany(mappedBy = "user")
     private Set<UserGroup> groups;
 
@@ -67,6 +70,14 @@ public class User {
 
     public void setLastLogin(LocalDateTime lastLogin) {
         this.lastLogin = lastLogin;
+    }
+
+    public UserInfo getUserInfo() {
+        return userInfo;
+    }
+
+    public void setUserInfo(UserInfo userInfo) {
+        this.userInfo = userInfo;
     }
 
     public Set<UserGroup> getGroups() {

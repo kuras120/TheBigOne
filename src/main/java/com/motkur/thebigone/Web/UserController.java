@@ -1,74 +1,74 @@
 package com.motkur.thebigone.Web;
-
+import com.motkur.thebigone.Model.Group;
+import com.motkur.thebigone.Model.UserInfo;
 import com.motkur.thebigone.Service.Interface.IGroupService;
 import com.motkur.thebigone.Service.Interface.ISecurityService;
 import com.motkur.thebigone.Service.Interface.IUserService;
-import com.motkur.thebigone.Validator.UserValidator;
+import com.motkur.thebigone.Validator.CreateGroupValidator;
+import com.motkur.thebigone.Validator.JoinGroupValidator;
+import com.motkur.thebigone.Validator.UserInfoValidator;
 import com.motkur.thebigone.Model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-
-import java.time.LocalDateTime;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class UserController {
     @Autowired
     private IUserService userService;
-
-    @Autowired
-    private IGroupService groupService;
-
     @Autowired
     private ISecurityService securityService;
-
     @Autowired
-    private UserValidator userValidator;
+    private UserInfoValidator userInfoValidator;
 
-    @GetMapping("/registration")
-    public String registration(Model model) {
-        model.addAttribute("userForm", new User());
+    @GetMapping("/welcome")
+    public String welcome(Model model) {
+        model.addAttribute("joinGroupForm", new Group());
+        model.addAttribute("createGroupForm", new Group());
 
-        return "jsp/registration";
-    }
-
-    @PostMapping("/registration")
-    public String registration(@ModelAttribute("userForm") User userForm, BindingResult bindingResult) {
-        userValidator.validate(userForm, bindingResult);
-
-        if (bindingResult.hasErrors()) {
-            return "jsp/registration";
+        String principalName = securityService.findLoggedInUsername();
+        System.out.println(principalName);
+        if (principalName != null) {
+            User user = userService.getUser(principalName);
+            model.addAttribute("groups", user.getGroups());
+            model.addAttribute("userCreatedOn", user.getCreatedOn().toLocalDate());
         }
 
-        userForm.setCreatedOn(LocalDateTime.now());
-        userForm.setLastLogin(userForm.getCreatedOn());
-        userService.save(userForm);
-        groupService.save(userForm, null, "Test", true);
-
-        securityService.autoLogin(userForm.getUsername(), userForm.getPasswordConfirm());
-
-        return "redirect:/welcome";
+        return "welcome";
     }
 
-    @GetMapping("/login")
-    public String login(Model model, String error, String logout) {
-        if (error != null)
-            model.addAttribute("error", "Your username and password is invalid.");
+    @GetMapping("/settings")
+    public String settings(Model model) {
+        UserInfo info = userService.getUser(securityService.findLoggedInUsername()).getUserInfo();
 
-        if (logout != null)
-            model.addAttribute("message", "You have been logged out successfully.");
+        model.addAttribute("userInfoForm", info);
 
-        return "jsp/login";
+        return "settings";
     }
 
-    @GetMapping({"/", "/welcome"})
-    public String welcome(Model model) {
-        User user = userService.findByUsername("kuras120");
-        if (user != null) model.addAttribute("groups", user.getGroups());
-        return "jsp/welcome";
+    @PostMapping("/settings")
+    public String settings(@ModelAttribute("userInfoForm") UserInfo userInfoForm, BindingResult bindingResult) {
+        userInfoValidator.validate(userInfoForm, bindingResult);
+
+        if (bindingResult.hasErrors()) {
+            return "settings";
+        }
+
+        userService.setUserInfo(userService.getUser(securityService.findLoggedInUsername()), userInfoForm);
+        return "settings";
+    }
+
+    @PostMapping("/settings/change_password")
+    public String changePassword(String oldPassword, String newPassword, String confirmPassword) {
+
+        return "settings";
+    }
+
+    @DeleteMapping("/settings")
+    public String settings() {
+
+        return "home";
     }
 }
